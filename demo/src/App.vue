@@ -4,15 +4,18 @@
     <div>原始形式获取state状态:{{$store.state.count}}</div>
     <div>原始形式获取state状态:{{count}}</div>
     <ChildA/>
+    <child-b/>
   </div>
 </template>
 <script>
 import ChildA from './components/child-a.vue'
+import ChildB from './components/child-b.vue'
 import {mapState} from 'vuex'
 export default {
   name:'App',
   components:{
-      ChildA
+      ChildA,
+      ChildB
   },
   computed: {
     // count(){

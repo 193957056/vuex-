@@ -43,7 +43,29 @@ const store = new Vuex.Store({
             // filterList: function() {
             //     return state.list.filter(item => item > 5)
             // }
-            filterList: state => state.list.filter(item => item > 5)
+            filterList: state => state.list.filter(item => item > 5),
+            token: state => state.user.token,
+            name: state => state.setting.name,
+
+        },
+        modules: {
+            // 放置子模块的属性
+            user: {
+                namespaced: true,
+                state: {
+                    token: '12345'
+                },
+                mutations: {
+                    updateToken(state) {
+                        state.token = '67890'
+                    },
+                }
+            },
+            setting: {
+                state: {
+                    name: 'vuex实例'
+                }
+            }
         }
     }) //实例化一个Vuex
 
